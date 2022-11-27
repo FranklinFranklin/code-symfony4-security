@@ -17,6 +17,7 @@ class ArticleAdminController extends AbstractController
     {
         die('todo');
 
+
         return new Response(sprintf(
             'Hiya! New Article id: #%d slug: %s',
             $article->getId(),
