@@ -29,7 +29,7 @@ class CommentAdminController extends Controller
             10/*limit per page*/
         );
 
-        return $this->render('comment_admin/index.html.twig', [
+        return $this->render('comment_admin/login.twig', [
             'pagination' => $pagination,
         ]);
     }
