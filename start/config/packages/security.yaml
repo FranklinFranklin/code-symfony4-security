@@ -6,13 +6,22 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+#                /// authentication: checks of your login and password is correct
+#                /// authorization: checks after you are authenticated if you may access that page
     firewalls:
+#        // dev: is a fake
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+#           to access public page, where no password is needed
             anonymous: true
-            provider: app_user_provider
+#            provider: app_user_provider
+
+#// this way there is a route <> logindFormAuthentication.php and the security.yaml script
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

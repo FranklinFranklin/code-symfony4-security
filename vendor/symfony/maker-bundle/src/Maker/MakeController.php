@@ -82,7 +82,7 @@ final class MakeController extends AbstractMaker
             Route::class,
         ]);
 
-        $templateName = Str::asFilePath($controllerClassNameDetails->getRelativeNameWithoutSuffix()).'/index.html.twig';
+        $templateName = Str::asFilePath($controllerClassNameDetails->getRelativeNameWithoutSuffix()).'/login.twig';
         $controllerPath = $generator->generateController(
             $controllerClassNameDetails->getFullName(),
             'controller/Controller.tpl.php',
