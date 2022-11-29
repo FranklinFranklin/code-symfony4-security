@@ -3,6 +3,7 @@
 namespace App\Security;
 
 
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -12,32 +13,61 @@ use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticato
 
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
-//     at the beginning of every request symfony will call the support method
+
+    private UserRepository $userRepository;
+
+    public function __construct(UserRepository $userRepository)
+{
+    $this->userRepository = $userRepository;
+}
+
+//      at the beginning of every request symfony will call the support method.
+//      supports is a listener
     public function supports(Request $request)
     {
-
-        die('authenticator is alive!!');
+//        app_login is the name of the function in security controller >>
+//        _route checks if the url is app_login and check if method is POST and submitted
+        return $request->attributes->get('_route') === 'app_login'
+            && $request->isMethod('POST');
     }
+//    if true? symfony will continue running the script
     public function getCredentials(Request $request)
     {
+//        if you want to dump a POST you use the $request property
+//        dd($request->request->all());
 
+//        read the authentication and return them in this case NAME and PASSWORD
+        return[
+            'email' => $request->request->get('email'),
+            'password' => $request->request->get('password'),
+        ];
+
+//        grab email from the page and check in de db if you have a match
     }
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-
+//        dd($credentials);
+//        getUser will return a user $credentials or null if the user is not found
+//        will now get the email
+        return $this->userRepository->findOneBy(['email' => $credentials['email']]);
+        // it will only continue if the email is found in the form else the script will stop
+        // return a user object
     }
     public function checkCredentials($credentials, UserInterface $user)
     {
+     // now we will check if the user password is matching typed in form and db !!!!
+    // users in db does not have password yet, so we force a true;
+        return true;
 
     }
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
-
+        dd('your password is correct');
     }
 
     protected function getLoginUrl()
     {
-
+ dd;
     }
 
 
