@@ -1,0 +1,3 @@
+"Username could not be found.": "Oh no! It doesn't look like that email exist!"
+# if you create a new translation file, symfony won't see the file until you clear the cache.
+# you can do this by clearing the cache php bin/console cache:clear
