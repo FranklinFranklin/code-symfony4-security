@@ -26,10 +26,12 @@ security:
             logout:
                 path: app_logout
 
-#                lifetime is the token lifetime
-                remember_me:
-                    secret: '%kernel.secret%'
-                    lifetime: 2592000
+#                lifetime is the token lifetime (PHP cookie) and puts cryptic data with '%kernel.secret%' into the cookie.
+#                kernel.secret is the parameter of symfony | can be checked with debug:container -parameters
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
