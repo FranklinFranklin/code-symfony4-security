@@ -9,6 +9,17 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends BaseFixture
 {
+
+
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
+
     protected function loadData(ObjectManager $manager)
     {
 //          create many users | the function will be called 10 times |
@@ -21,6 +32,14 @@ class UserFixtures extends BaseFixture
 
 //            set fake firstnames
             $user->setFirstName($this->faker->firstName);
+
+//          encrypt password
+//          $user is to know what encoder type to use and SET is to set it into the setPassword Entity
+//          ... this is fetch from security.yaml
+            $user->setPassword($this->passwordEncoder->encodePassword(
+                $user,
+                    'engage'
+                ));
 
             return $user;
         });

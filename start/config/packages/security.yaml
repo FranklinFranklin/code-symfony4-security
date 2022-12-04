@@ -1,5 +1,13 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+
+
+#    to encrypt plain text password + check if the submitted password is valid.
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+            cost: 4
+
     providers:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
