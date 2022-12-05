@@ -18,9 +18,12 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
+use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
+//   helps sending the user to the previous page, so the page the user tried to login to.
+    use TargetPathTrait;
 
     private  $userRepository;
     private  $router;
@@ -90,6 +93,13 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     }
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
+//        gets the getTargetPath from TargetTargetPathTrait
+        if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)){
+            // if the target url is not stored in the session, redirectresponse
+            return new RedirectResponse($targetPath);
+        }
+
+
 //         this is to reroute after the authentication if we have a success
         return new RedirectResponse($this->router->generate('app_homepage'));
     }
