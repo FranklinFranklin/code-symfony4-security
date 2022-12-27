@@ -1,10 +1,6 @@
 
-N
-start/templates/base.html.twig,f\8\f8221ae67ad5ad94d584993699cb20add7433734
 J
 start/public/css/login.css,2\7\27a32820ba92d8104bb51e696322d2fe675c122a
-?
-start/README.md,7\3\73dafa1ee92807860d7348e543234e6de3d88cdd
 q
 Avendor/symfony/framework-bundle/Controller/AbstractController.php,4\c\4cb4da86cc112771e201283de759e1b878fb3225
 S
@@ -19,3 +15,15 @@ w
 G.idea/sonarlint/issuestore/a/b/ab857bc6cee9fa6cacdeffa0ed525fe120fc2141,d\e\deff118b60e8f62f7b7b964e4417f7e934347757
 ^
 .start/src/Migrations/Version20221204072609.php,b\7\b777de66a95a72b8012b11491af019d4013a76f9
+I
+start/src/Entity/User.php,b\c\bc8bc848dc60a6812e1b7deadf97fcbea7cbc247
+S
+#start/templates/security/login.twig,f\4\f472689e7181d593511c708472c88427cd9f55be
+[
++start/src/Controller/SecurityController.php,1\e\1eba594903a7b87266b597ebe654d5673854fa81
+]
+-start/templates/comment_admin/login.html.twig,f\0\f079de57d1fd6acfd0b5d7f0b8013e9a1ad7f91a
+_
+/start/src/Controller/CommentAdminController.php,1\f\1f77b748e08a66063b0525efcf8ab4f11bb5ce90
+@
+finish/.env.dist,1\7\17acafcce9dd6a55f2f845d99e63dd85bed1f9ee

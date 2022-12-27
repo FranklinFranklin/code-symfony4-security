@@ -22,7 +22,7 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
-//   helps sending the user to the previous page, so the page the user tried to login to.
+//   helps sending the user to the previous page, to the page the user tried to login to.
     use TargetPathTrait;
 
     private  $userRepository;
