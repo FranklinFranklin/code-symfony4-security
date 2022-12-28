@@ -1,8 +1,6 @@
 
 J
 start/public/css/login.css,2\7\27a32820ba92d8104bb51e696322d2fe675c122a
-q
-Avendor/symfony/framework-bundle/Controller/AbstractController.php,4\c\4cb4da86cc112771e201283de759e1b878fb3225
 S
 #start/translations/security.en.yaml,a\b\ab857bc6cee9fa6cacdeffa0ed525fe120fc2141
 w
@@ -27,3 +25,15 @@ _
 /start/src/Controller/CommentAdminController.php,1\f\1f77b748e08a66063b0525efcf8ab4f11bb5ce90
 @
 finish/.env.dist,1\7\17acafcce9dd6a55f2f845d99e63dd85bed1f9ee
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+?
+start/README.md,7\3\73dafa1ee92807860d7348e543234e6de3d88cdd
+_
+/start/src/Controller/ArticleAdminController.php,7\e\7eb3d4e1c95b944df4d6f444d1a368d235e8b873
+M
+vendor/composer/installed.php,f\1\f1e920340fcfc7c307af59582a3078c9791c232d
+]
+-start/src/Security/LoginFormAuthenticator.php,e\a\ea44ed52b17c19c8d448fa43138e6890f8724a27
+W
+'start/src/DataFixtures/UserFixtures.php,2\2\2213784bffeb83b6fb3ea63b1934296c56ccf412
