@@ -14,13 +14,15 @@
                 <div class="row spacepurplebg white">
                     <div class="col-md-2 no-pad">
                         <div class="user-image">
-                            <img src="https://robohash.org/{{ app.user.email }}" alt="robohash" class="img-responsive thumbnail">
+                            <img src=" {{ app.user.avatarUrl }}" alt="robohash" class="img-responsive thumbnail">
                         </div>
                     </div>
                     <div class="col-md-10 no-pad">
                         <div class="user-pad">
+                            {% if app.user.twitterUsername %}
                             <h3>Welcome back, {{ app.user.firstName }}</h3>
-                            <h4 class="white"><em class="fa fa-twitter"></em> {{ app.user.firstName }}</h4>
+                            <h4 class="white"><em class="fa fa-twitter"></em> {{ app.user.twitterUsername }}</h4>
+                            {% endif %}
                             <a class="btn btn-labeled btn-info" href="#">
                                 <span class="btn-label"><em class="fa fa-pencil"></em></span>Update
                             </a>

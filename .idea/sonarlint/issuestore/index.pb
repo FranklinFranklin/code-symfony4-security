@@ -13,8 +13,6 @@ w
 G.idea/sonarlint/issuestore/a/b/ab857bc6cee9fa6cacdeffa0ed525fe120fc2141,d\e\deff118b60e8f62f7b7b964e4417f7e934347757
 ^
 .start/src/Migrations/Version20221204072609.php,b\7\b777de66a95a72b8012b11491af019d4013a76f9
-I
-start/src/Entity/User.php,b\c\bc8bc848dc60a6812e1b7deadf97fcbea7cbc247
 S
 #start/templates/security/login.twig,f\4\f472689e7181d593511c708472c88427cd9f55be
 [
@@ -35,5 +33,3 @@ M
 vendor/composer/installed.php,f\1\f1e920340fcfc7c307af59582a3078c9791c232d
 ]
 -start/src/Security/LoginFormAuthenticator.php,e\a\ea44ed52b17c19c8d448fa43138e6890f8724a27
-W
-'start/src/DataFixtures/UserFixtures.php,2\2\2213784bffeb83b6fb3ea63b1934296c56ccf412
